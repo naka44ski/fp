@@ -484,7 +484,6 @@ function calc() {
   speed3[0] = 0;
   for (let i = 1; i < rep3.length; i++) {
     if(rep3[i]-rep3[i-1] > 100 && i != 0) {
-      speed3[i] = (((rep3[i-2]-rep3[i-3])*T_Scale)*1000)/(rep[i-2]-rep[i-3]);
     }
     else if (rep3[i]-rep3[i-1] == 0 && rep3[i-1] != 0 && rep3[i+1] != 0 && i != rep3.length-1) {
       let speed_plus1;
