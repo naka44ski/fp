@@ -417,12 +417,14 @@ function calc() {
   
   var countx = 0;
   var Cx = 0;
+  var xi = 1;
   for (var i = 0; i < tmp3[i].length; i++) {
-    if(countx = 4){
-        tmp33_t[(i+1)/5] = tmp3[i];
-        tmp33[(i+1)/5] = Cx/5.0;
+    if(countx = 2){
+        tmp33_t[xi] = tmp3[i];
+        tmp33[xi] = Cx/3.0;
         Cx = 0;
         countx = 0;
+        xi++;
     } else {
         countx++;
         Cx += tmp3[i];
