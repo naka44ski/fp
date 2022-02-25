@@ -482,15 +482,15 @@ function calc() {
   speed3[0] = 0;
   for (let i = 1; i < rep3.length; i++) {
     if(rep3[i]-rep3[i-1] > 100 && i != 0) {
-      speed3[i] = (((rep3[i-1]-rep3[i-2])*T_Scale)*1000)/(rep[i-1]-rep[i-2]);
+      speed3[i] = (((rep3[i-2]-rep3[i-3])*T_Scale)*1000)/(rep[i-2]-rep[i-3]);
     }
     else if (rep3[i]-rep3[i-1] == 0 && rep3[i-1] != 0 && rep3[i+1] != 0 && i != rep3.length-1) {
       let speed_plus1;
-      speed_plus1 = (((rep3[i+1]-rep3[i])*T_Scale)*1000)/(rep[i+1]-rep[i]);
-      speed3[i] = (speed_plus1 + speed3[i-1])/2.0;
+      speed_plus1 = (((rep3[i]-rep3[i-1])*T_Scale)*1000)/(rep[i]-rep[i-1]);
+      speed3[i] = (speed_plus1 + speed3[i-2])/2.0;
     }
     else{
-      speed3[i] = (((rep3[i]-rep3[i-1])*T_Scale)*1000)/(rep[i]-rep[i-1]);
+      speed3[i] = (((rep3[i-1]-rep3[i-2])*T_Scale)*1000)/(rep[i-1]-rep[i-2]);
     }
   }
 
