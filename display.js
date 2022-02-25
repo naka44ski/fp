@@ -381,6 +381,8 @@ function calc() {
   var tmp2_t = [];
   var tmp3 = [];
   var tmp3_t = []
+  var tmp33 = [];
+  var tmp33_t = [];
   rep = [];
   rep1 = [];
   rep2 = [];
@@ -412,12 +414,26 @@ function calc() {
     tmp3_t[i] = (Number(tmp[1]));
     tmp3[i] = (Number(tmp[0]));
   }
+  
+  var countx = 0;
+  var Cx = 0;
+  for (var i = 0; i < tmp3[i].length; i++) {
+    if(countx = 4){
+        tmp33_t[(i+1)/5] = tmp3[i];
+        tmp33[(i+1)/5] = Cx/5.0;
+        Cx = 0;
+        countx = 0;
+    } else {
+        countx++;
+        Cx += tmp3[i];
+    }
+  }
 
   console.log(tmp1_t,tmp1,tmp2_t,tmp2,tmp3_t,tmp3);
 
   var n1 = tmp1_t[0];
   var n2 = tmp2_t[0];
-  var n3 = tmp3_t[0];
+  var n3 = tmp33_t[0];
 
   var min = n1;
   if( n2 < min ) {
@@ -429,7 +445,7 @@ function calc() {
 
   var m1 = tmp1_t[tmp1.length-1];
   var m2 = tmp2_t[tmp2.length-1];
-  var m3 = tmp3_t[tmp3.length-1];
+  var m3 = tmp33_t[tmp33.length-1];
 
   console.log(m1, m2, m3);
   var max = m1;
@@ -453,7 +469,7 @@ function calc() {
       rep[k] = tmp1_t[t1-1];
       rep1[k] = tmp1[t1-1];
       rep2[k] = tmp2[t2-1];
-      rep3[k] = tmp3[t3-1];
+      rep3[k] = tmp33[t3-1];
       t1++;
       k++;
     }
@@ -462,7 +478,7 @@ function calc() {
       rep[k] = tmp2_t[t2-1];
       rep1[k] = tmp1[t1-1];
       rep2[k] = tmp2[t2-1];
-      rep3[k] = tmp3[t3-1];
+      rep3[k] = tmp33[t3-1];
       t2++;
       k++;
     }
@@ -471,7 +487,7 @@ function calc() {
       rep[k] = tmp3_t[t3-1];
       rep1[k] = tmp1[t1-1];
       rep2[k] = tmp2[t2-1];
-      rep3[k] = tmp3[t3-1];
+      rep3[k] = tmp33[t3-1];
       t3++;
       k++;
     }
