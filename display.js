@@ -592,7 +592,7 @@ function calc() {
                         },
             ticks: {
                 max: 5,
-                min: -2,
+                min: 0,
                 stepSize: 1
             },
             gridLines: {
