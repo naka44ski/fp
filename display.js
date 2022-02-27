@@ -521,13 +521,15 @@ for (let i = 1; i < rep2.length; i++) {
 
 var del = 0;
 for(let i = 0; i < rep.length; i++) {
-  if(w1[i] < 10 && w2[i] < 10){
+  if((w1[i] < 10 && w2[i] < 10) && !(w1[i+1]-w1[i] < 0 && w2[i+1]-w2[i] > 0)){
     del++;
   }else if(w1[i] > 10 || w2[i] > 10){
     del = 0;
   }
 }
-if(del > 100){
+if (del > 200){
+  del = 100;
+}else if(del > 10){
   for(let i = 0; i < del; i++){
     rep.pop();
     w1.pop();
