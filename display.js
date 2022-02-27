@@ -408,8 +408,8 @@ for (var i = 0;i < window.record2.length; i++) {
 for (var i = 0;i < window.centergx.length; i++) {
   var tmp = [2]; 
   tmp = window.centergx[i].split(',');
-  tmp3_t[i] = (Number(tmp[1]));
-  tmp3[i] = (Number(tmp[0]));
+  tmp33_t[i] = (Number(tmp[1]));
+  tmp33[i] = (Number(tmp[0]));
 }
 
 console.log(m1, m2, m3);
