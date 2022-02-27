@@ -527,7 +527,7 @@ barChartData = {
     {
         type: 'line',
         label: '重心移動速度',
-        data: speed3,
+        data: rep3,
         borderColor : "rgba(254,97,132,0.5)",
         fill: false,
         pointRadius: 0,
