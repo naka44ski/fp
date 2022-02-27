@@ -45,7 +45,7 @@ var display_1 = function(chartname) {
             chart.data.datasets[0].data.push({
                 x: Date.now(),
                 //y: Number(window.str1)
-                y: 1016-Number(window.str1)
+                y: 1023-Number(window.str1)
             });
           }
         }
@@ -108,8 +108,7 @@ var display_2 = function(chartname) {
           onRefresh: function(chart) {
             chart.data.datasets[0].data.push({
                 x: Date.now(),
-                y: 1016-Number(window.str2)
-                //y: Number(window.str2)
+                y: 1023-Number(window.str2)
             });
           }
         }
@@ -170,7 +169,6 @@ var display_3 = function(chartname) {
           onRefresh: function(chart) {
             chart.data.datasets[0].data.push({
                 x: Date.now(),
-                //y: 1020-Number(window.str2)
                 y: Number(window.str3)
             });
           }
@@ -535,6 +533,9 @@ if(del > 10){
     rep3.pop();
   }
 }
+
+let maxSpeedDiv = document.getElementById("maxspeed");
+maxSpeedDiv.innerHTML = "" + Math.max(...rep3);
 
 barChartData = {
   labels: rep,

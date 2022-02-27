@@ -183,9 +183,7 @@
             T_Scale = HT / T_Height;
             isFinite(((((constCgx/5.0) - preconstCgx)*T_Scale)*1000)/(window.time3 - precgxTime)) ? 
               window.str3 = ((((constCgx/5.0) - preconstCgx)*T_Scale)*1000)/(window.time3 - precgxTime) : 0;
-            if(window.str3 > cgxSpeed){
-              cgxSpeed = window.str3;
-            }
+
             preconstCgx = constCgx/5.0;
             constCgx = 0;
             cgx_i = 0;
@@ -194,9 +192,6 @@
           let speedDiv = document.getElementById("speed");
           speedDiv.innerHTML = "" + 
             (Math.round(window.str3 * 1000) / 1000);
-      
-          let maxSpeedDiv = document.getElementById("maxspeed");
-          maxSpeedDiv.innerHTML = "" + cgxSpeed;
         }
 
         for (let j = 0; j < pose.keypoints.length; j++) {
