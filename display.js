@@ -412,6 +412,22 @@ for (var i = 0;i < window.centergx.length; i++) {
   tmp33[i] = (Number(tmp[0]));
 }
 
+var n1 = tmp1_t[0];
+var n2 = tmp2_t[0];
+var n3 = tmp33_t[0];
+
+var min = n1;
+if( n2 < min ) {
+  min = n2;
+}
+if( n3 < min ) {
+  min = n3;
+}
+
+var m1 = tmp1_t[tmp1.length-1];
+var m2 = tmp2_t[tmp2.length-1];
+var m3 = tmp33_t[tmp33.length-1];
+
 console.log(m1, m2, m3);
 var max = m1;
 if( max < m2 ) {
