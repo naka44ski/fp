@@ -374,6 +374,19 @@ var speed4 = [];
 var time = [];
 var barChartData;
 var complexChartOption;
+
+function saikiTmp(array, array_t) {
+  for(i = 0; i < array.length; i++){
+    if(array[i-1]-array[i] >= 100 && i > 0){
+      array.splice(i, 1);
+      array_t.splice(i,1);
+      saikiTmp(array,array_t);
+    }
+  }
+
+  return [array,array_t]
+}
+
 function calc() {
 var tmp1 = [];
 var tmp1_t = [];
@@ -442,23 +455,28 @@ var t1 = 0;
 var t2 = 0;
 var t3 = 0;
 
+let arrayTmp = saikiTmp(tmp33,tmp33_t);
+
+var tmp3pre = arrayTmp[0];
+var tmp3pre_t = arrayTmp[1];
+
 var tmp3 = [];
 var tmp3_t = [];
 
-for (var i = 0;5*i <tmp33.length; i++) {
-var sum = 0;
-for(var j = 0;j < 5; j++) {
-  sum += tmp33[5*i+j];
+for (var i = 0;5*i <tmp3pre.length; i++) {
+  var sum = 0;
+  for(var j = 0;j < 5; j++) {
+    sum += tmp3pre[5*i+j];
 }
 tmp3[i] = sum/5.0;
-tmp3_t[i] = tmp33_t[5*i+2];
+tmp3_t[i] = tmp3pre_t[5*i+2];
 }
 
 speed3[0] = 0;
 for (let i = 1; i < tmp3.length; i++) {
-if(tmp3[i] <= tmp3[i-1]){
-  speed3[i] = 0;
-} else speed3[i] = (((tmp3[i]-tmp3[i-1])*T_Scale)*1000)/(tmp3_t[i]-tmp3_t[i-1]);
+  if(tmp3[i] <= tmp3[i-1]){
+    speed3[i] = 0;
+  } else speed3[i] = (((tmp3[i]-tmp3[i-1])*T_Scale)*1000)/(tmp3_t[i]-tmp3_t[i-1]);
 }
 
 let k = 0;
