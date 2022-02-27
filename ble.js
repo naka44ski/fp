@@ -61,7 +61,6 @@ var blt_1 = function(disp) {
       //直接文字列を数値に変換せず、一旦格納
       window.str1 = String.fromCharCode.apply(null, str_arr);
       window.time1 = Date.now();
-      console.log(window.str1);
       if (window.record1.length >= 2000) {
         window.record1 = window.record1.splice(1000);
         //window.record1.shift();
@@ -147,7 +146,6 @@ var blt_2 = function(disp) {
           str_arr[i] = this.value.getUint8(i);
       }
       window.str2 = String.fromCharCode.apply(null, str_arr);
-      console.log(window.str2);
       window.time2 = Date.now();
       if (window.record2.length >= 2000) {
         window.record2 = window.record2.splice(1000);
