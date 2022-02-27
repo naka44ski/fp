@@ -527,9 +527,7 @@ for(let i = 0; i < rep.length; i++) {
     del = 0;
   }
 }
-if (del > 200){
-  del = 100;
-}else if(del > 10){
+if(del > 10){
   for(let i = 0; i < del; i++){
     rep.pop();
     w1.pop();
