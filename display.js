@@ -488,6 +488,7 @@ for (let i = min; i <= max; i++){
     rep3[k] = speed3[t3];
     t1++;
     k++;
+    console.log(rep[k],rep1[k],rep2[k],rep3[k]);
   }
   if(tmp2_t[t2] == i){
     c = 2;
@@ -497,6 +498,7 @@ for (let i = min; i <= max; i++){
     rep3[k] = speed3[t3];
     t2++;
     k++;
+    console.log(rep[k],rep1[k],rep2[k],rep3[k]);
   }
   if(tmp3_t[t3] == i){
     c = 3;
@@ -506,8 +508,11 @@ for (let i = min; i <= max; i++){
     rep3[k] = speed3[t3];
     t3++;
     k++;
+    console.log(rep[k],rep1[k],rep2[k],rep3[k]);
   }
 }
+
+console.log(rep,rep1,rep2,rep3);
 
 for (let i = 1; i < rep1.length; i++) {
   w1[i] = 1.7*(157.63514*Math.exp(-0.00454899421*(rep1[i]-567.574356)) - 17.8917946);
@@ -517,22 +522,22 @@ for (let i = 1; i < rep2.length; i++) {
   w2[i] = 1.7*(157.63514*Math.exp(-0.00454899421*(rep2[i]-567.574356)) - 17.8917946);
 }
 
-var del = 0;
-for(let i = 0; i < rep.length; i++) {
-  if((w1[i] < 10 && w2[i] < 10) && !(w1[i+1]-w1[i] < 0 && w2[i+1]-w2[i] > 0)){
+/*let del = 0;
+for(let i = rep.length-1; i >= 0; i--) {
+  if(w1[i] < 10 && w2[i] < 10){
     del++;
-  }else if(w1[i] > 10 || w2[i] > 10){
-    del = 0;
+  }else {
+    break;
   }
 }
-if(del > 10){
-  for(let i = 0; i < del; i++){
-    rep.pop();
-    w1.pop();
-    w2.pop();
-    rep3.pop();
-  }
-}
+
+for(let i = 0; i < del; i++){
+  rep.pop();
+  w1.pop();
+  w2.pop();
+  rep3.pop();
+}*/
+
 
 let maxSpeedDiv = document.getElementById("maxspeed");
 maxSpeedDiv.innerHTML = "" + Math.max(...rep3);
@@ -570,7 +575,7 @@ barChartData = {
         cubicInterpolationMode: "default",
     },
   ],
-};
+}
 
 complexChartOption = {
   responsive: true,
@@ -618,6 +623,7 @@ complexChartOption = {
   }
 };
 }
+
 
 //描画処理
 var display_7 = function(chartname) {
