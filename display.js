@@ -140,6 +140,9 @@ var display_3 = function(chartname) {
       }]
     },
     options: {
+      tooltips: {
+        enabled: false
+      },
       scales: {
         xAxes: [{
           type: 'realtime'
@@ -545,7 +548,7 @@ for (let i = 1; i < rep2.length; i++) {
 
 let del = 0;
 for(let i = rep.length-1; i >= 0; i--) {
-  if((w1[i] < 10 && w2[i] < 10) || (isNaN(w1[i]) && w2[i] < 10) || (w1[i] < 10 && isNaN(w2[i])) || (isNaN(w1[i]) && isNaN(w2[i])) ){
+  if((w1[i] < 15 && w2[i] < 15) || (isNaN(w1[i]) && w2[i] < 15) || (w1[i] < 15 && isNaN(w2[i])) || (isNaN(w1[i]) && isNaN(w2[i])) ){
     del++;
   }else {
     break;
@@ -561,7 +564,7 @@ for(let i = 0; i < del; i++){
 
 del = 0;
 for(let i = 0; i <rep.length; i++) {
-  if((w1[i] < 10 && w2[i] < 10) || (isNaN(w1[i]) && w2[i] < 10) || (w1[i] < 10 && isNaN(w2[i])) || (isNaN(w1[i]) && isNaN(w2[i])) ){
+  if((w1[i] < 15 && w2[i] < 15) || (isNaN(w1[i]) && w2[i] < 15) || (w1[i] < 15 && isNaN(w2[i])) || (isNaN(w1[i]) && isNaN(w2[i])) ){
     del++;
   }else {
     break;
@@ -578,13 +581,17 @@ for(let i = 0; i < del; i++){
 
 let maxSpeedDiv = document.getElementById("maxspeed");
 maxSpeedDiv.innerHTML = "" + Math.max(...rep3);
+let maxJK = document.getElementById("maxJK");
+maxJK.innerHTML = "" + Math.max(...w1);
+let maxHK = document.getElementById("maxHK");
+maxHK.innerHTML = "" + Math.max(...w2);
 
 barChartData = {
   labels: rep,
   datasets: [
     {
         type: 'line',
-        label: '地面反力(踏込足)',
+        label: '地面反力(軸足)',
         data: w1,
         borderColor : "rgba(54,164,235,0.8)",
         fill: false,
@@ -593,7 +600,7 @@ barChartData = {
         cubicInterpolationMode: "default",
     },{
         type: 'line',
-        label: '地面反力(軸足)',
+        label: '地面反力(踏込足)',
         data: w2,
         borderColor : "rgba(132,235,94,0.8)",
         fill: false,

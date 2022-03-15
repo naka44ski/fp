@@ -45,10 +45,10 @@ width: 50%; /* 要素の幅を50%に定義 */
     <a>体重</a> <input type="text" id="weight" value="85"><br>
     <a>軸足</a> <input type="text" id="jiku">
     <a>踏込足</a> <input type="text" id="humikomi">
-    <div>重心移動速度[m/s]</div>
-    <div id="speed"></div>
-    <div>最大重心移動速度[m/s]</div>
-    <div id="maxspeed"></div>
+    <div>重心移動速度[m/s]:<a id="speed"></a></div>
+    <div>最大重心移動速度[m/s]:<a id="maxspeed"></a></div>
+    <div>最大地面反力(軸足)[kgf]:<a id="maxJK"></a></div>
+    <div>最大地面反力(踏込足)[kgf]:<a id="maxHK"></a></div>
 </div>
 <div class="left-column">
 <form name="js">
@@ -56,14 +56,14 @@ width: 50%; /* 要素の幅を50%に定義 */
     <input type="button" value="切断" onclick="blt1.disconnect();" />
     <input type="text" name="ave" value="" />
 </form>
-<canvas id='myChart1' height="100px"></canvas>
+<canvas id='myChart1' height="45px"></canvas>
 <form name="js">
     <input type="button" value="接続" onclick="blt2.connect();"/>
     <input type="button" value="切断" onclick="blt2.disconnect();" />
     <input type="text" name="ave" value="" />
 </form>
-<canvas id="myChart2" height="100px"></canvas>
-<canvas id="myChart3" height="60px"></canvas>
+<canvas id="myChart2" height="45px"></canvas>
+<canvas id="myChart3" height="45px"></canvas>
 <canvas id="myChart7" height="200px"></canvas>
 <canvas id="myChart4" height="100px"></canvas>
 <canvas id="myChart5" height="100px"></canvas>
